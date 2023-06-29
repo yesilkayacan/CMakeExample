@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.hpp"
+#include "renderer/Renderer.hpp"
 
 class Application
 {
@@ -12,4 +13,5 @@ public:
 
 private:
     Window *window;
+    eng::Renderer *renderer;
 };

@@ -1,8 +1,10 @@
 #include "Application.hpp"
 
 Application::Application()
-    : window(new Window(800, 600, "gui_app"))
+    : window(new Window(800, 600, "gui_app")),
+      renderer(new eng::Renderer())
 {
+    renderer->Init();
 }
 
 Application::~Application() {}

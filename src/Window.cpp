@@ -49,6 +49,13 @@ void Window::pollEvents() const
     glfwPollEvents();
 }
 
+std::pair<const char **, uint32_t> Window::GetInstanceExtensions()
+{
+    uint32_t glfwExtensionCount;
+    auto glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
+    return std::make_pair(glfwExtensions, glfwExtensionCount);
+}
+
 void Window::errorCallback(int error, const char *description)
 {
     std::cerr << "GLFW Error " << error << ": " << description << std::endl;

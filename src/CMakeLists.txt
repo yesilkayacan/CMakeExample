@@ -1,5 +1,5 @@
 # Add source files in the src directory
-file(GLOB FILES_SRC CONFIGURE_DEPENDS "*.cpp")
+file(GLOB_RECURSE FILES_SRC CONFIGURE_DEPENDS "*.cpp")
 add_library(gui_applib ${FILES_SRC})
 target_compile_features(gui_applib PUBLIC cxx_std_17)
 

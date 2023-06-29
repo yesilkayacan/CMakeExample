@@ -2,6 +2,8 @@
 
 #include <GLFW/glfw3.h>
 
+#include <set>
+
 class Window
 {
 public:
@@ -11,6 +13,8 @@ public:
     void pollEvents() const;
 
     GLFWwindow *getGLFWwindow() const { return glfwWindow; }
+
+    static std::pair<const char **, uint32_t> GetInstanceExtensions();
 
 private:
     static void errorCallback(int error, const char *description);
